@@ -31,7 +31,8 @@ describe("workflowSerializer", () => {
       entryStepKey: "extrusion",
     });
     expect(payload.steps).toHaveLength(1);
-    expect(payload.steps[0].routing.default_next).toBe("testing");
+    const [step] = payload.steps;
+    expect(step?.routing.default_next).toBe("testing");
     expect(payload.entry_step_key).toBe("extrusion");
   });
 
@@ -65,6 +66,6 @@ describe("workflowSerializer", () => {
     };
     const graph = templateToGraph(template);
     expect(graph.nodes).toHaveLength(1);
-    expect(graph.nodes[0].position).toEqual({ x: 10, y: 20 });
+    expect(graph.nodes[0]?.position).toEqual({ x: 10, y: 20 });
   });
 });
