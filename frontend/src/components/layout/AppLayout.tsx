@@ -27,6 +27,7 @@ import {
 import { useMemo, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../../auth/AuthContext";
+import { ROLE_LABELS } from "../../utils/constants";
 
 const DRAWER_WIDTH = 260;
 
@@ -40,7 +41,7 @@ const navItems = [
   { label: "Settings", path: "/settings", icon: <SettingsIcon /> },
 ];
 
-import { ROLE_LABELS } from "../../utils/constants";
+export default function AppLayout() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
   const [mobileOpen, setMobileOpen] = useState(false);
