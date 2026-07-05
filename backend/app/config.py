@@ -14,9 +14,10 @@ class Settings(BaseSettings):
     jwt_access_token_expire_minutes: int = 30
     jwt_refresh_token_expire_days: int = 7
     cors_origins: str = (
+    cors_origins: str = (
     "http://localhost:5173,"
     "http://localhost:3000,"
-    "https://field-project-3pek.vercel.app"
+    "https://field-project-bay.vercel.app"
     )
     backend_reload: bool = False
     simulation_default_tick_ms: int = 100
